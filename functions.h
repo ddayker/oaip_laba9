@@ -109,30 +109,28 @@ void new_chitatel(FILE* fp,chitatel p_chitatel[10], int num)
     else cout << "\nМАССИВ ПЕРЕПОЛНЕН!\n"<< endl;
 }
 
-void print(FILE* fp,chitatel* p_chitatel, int num)
-{
-    
-    if (num == 0)
-    {
-        cout << "ДАННЫХ НЕТ! Введите данные." << endl;
-        return;
-    }
-    
 
-    for (int i = 0; i < num; i++)
+    
+    void print(chitatel* p_chitatel, int num)
     {
-        cout << " Читатель №" << i + 1 << endl;
-        cout << "Полное имя:" << (p_chitatel + i)->person.familia<<" "<<
-        (p_chitatel+ i)->person.imya<<" "<<(p_chitatel+ i)->person.otchestvo <<endl;
-        cout << "Номер билета: "<< (p_chitatel + i)->nomer << endl;
-        cout << "Название книги: " << (p_chitatel + i)->kniga << endl;
-        cout << "Дата возврата (День, Месяц, Год):" <<(p_chitatel + i)->data.day <<
-        "/"<< (p_chitatel + i)->data.month << "/"<< (p_chitatel + i)->data.year <<endl;
-        cout << "------------------------------------------------------------" << endl;
-        cout << endl;
+        if (num == 0)
+        {
+            cout << "ДАННЫХ НЕТ! Введите данные.\n" << endl;
+            return;
+        }
         
+        printf(" \n -----------------------------------------------------------------------------------------\n");
+        printf(" |№|            ФИО                   |  Номер билета | Название книги | Дата возврата   |\n");
+        printf(" |-+-------------------------------------------------------------------------------------|\n");
+
+        for (int i = 0; i < num; i++)
+        {
+            printf(" |%d|%10s %10s %12s|%15s| %15s| %2d %2d %4d      |\n", i + 1,(p_chitatel + i)->person.familia , (p_chitatel+ i)->person.imya,(p_chitatel+ i)->person.otchestvo , (p_chitatel + i)->nomer,(p_chitatel + i)->kniga,
+                   (p_chitatel + i)->data.day , (p_chitatel + i)->data.month , (p_chitatel + i)->data.year );
+        }
+        printf(" -----------------------------------------------------------------------------------------\n");
+
     }
-}
 
 
 void print1(chitatel* p_chitatel, int num)

@@ -20,8 +20,8 @@ int main()
     {
       printf("Невозможно открыть файл\n");
         while (v>3 || v<1){
-      printf("1-Создать новый файл\n");
-      printf("2-Загрузить данные с бэкапа\n");
+      printf("1- Создать новый файл\n");
+      printf("2- Загрузить данные с бэкапа\n");
       printf("3-Выход\n");
         scanf("%d",&v);
         switch (v) {
@@ -62,7 +62,7 @@ int main()
                 num++;
             break;
         case 2:
-            print(fp,new_name, num);
+            print(new_name, num);
             break;
         case 3:
             research(new_name, num);
